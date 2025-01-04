@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoscope</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Horoscope</h1>
+        {% if data.error %}
+            <p class="error">{{ data.error }}</p>
+        {% else %}
+            <h2>{{ data.sign.capitalize() }}</h2>
+            <p><strong>Date Range:</strong> {{ data.date_range }}</p>
+            <p><strong>Date:</strong> {{ data.current_date }}</p>
+            <p><strong>Horoscope:</strong> {{ data.description }}</p>
+        {% endif %}
+        <br>
+        <a href="/">Go back</a>
+    </div>
+</body>
+</html>

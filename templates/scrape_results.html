@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scraping Results for "{{ keyword }}"</h1>
+        <ul>
+            {% for result in results %}
+            <li>
+                <strong>{{ result.url }}</strong><br>
+                Title: {{ result.title }}<br>
+                Keyword Found: {{ "Yes" if result.keyword_found else "No" }}<br>
+                {% if result.error %}
+                Error: {{ result.error }}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn">Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Passphrase or Choose Your Zodiac</h1>
+
+        <!-- Single form for passphrase and zodiac sign -->
+        <form action="/" method="post">
+            <!-- Passphrase input (optional) -->
+            <input type="password" name="passphrase" placeholder="Enter passphrase (optional)">
+
+            <!-- Zodiac sign dropdown -->
+            <label for="sign">Select your Zodiac Sign:</label>
+            <select name="sign" id="sign" required>
+                <option value="">-- Select your sign --</option>
+                {% for sign in zodiac_signs %}
+                    <option value="{{ sign }}">{{ sign.capitalize() }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
