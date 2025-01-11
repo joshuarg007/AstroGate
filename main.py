@@ -4,10 +4,10 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import requests
 import logging
-from config import SECRET_PASSPHRASE  # Importing the passphrase from config.py
-import logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+
+# Importing the passphrase from config.py
+from config import SECRET_PASSPHRASE 
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +29,7 @@ def get_horoscope(sign: str):
 
     url = "https://aztro.sameerkumar.website/"
     params = (("sign", sign), ("day", "today"))  # Use a tuple of tuples for params
+    
     try:
         response = requests.post(url, params=params)  # Pass params as a tuple
         if response.status_code == 200:
@@ -68,6 +69,7 @@ async def handle_form(request: Request, passphrase: str = Form(None), sign: str 
         "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra",
         "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"
     ]
+    
     return templates.TemplateResponse(
         "home.html",
         {"request": request, "error": "Please provide a valid passphrase or select a zodiac sign!", "zodiac_signs": zodiac_signs},
