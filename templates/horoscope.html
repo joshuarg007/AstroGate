@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horoscope</title>
+    <title>Today's Horoscope</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Your Horoscope</h1>
-        {% if data.error %}
-            <p class="error">{{ data.error }}</p>
-        {% else %}
-            <h2>{{ data.sign.capitalize() }}</h2>
-            <p><strong>Date Range:</strong> {{ data.date_range }}</p>
-            <p><strong>Date:</strong> {{ data.current_date }}</p>
-            <p><strong>Horoscope:</strong> {{ data.description }}</p>
-        {% endif %}
-        <br>
-        <a href="/">Go back</a>
+        <header class="header">
+            <h1 class="title">Your Daily Horoscope</h1>
+            <p class="subheading">The stars have spoken! See what the universe has in store for you today.</p>
+        </header>
+
+        <section class="horoscope-card">
+            <h2 class="sign-title">{{ data.sign.capitalize() }}'s Horoscope</h2>
+            <div class="horoscope-content">
+                <p>{{ data.horoscope }}</p>
+            </div>
+        </section>
+
+        <div class="back-to-home">
+            <!-- Button to go back to the homepage -->
+            <a href="/" class="home-button">Back to Home</a>
+        </div>
+
+        <footer class="footer">
+            <p>© {{ current_year }} Horoscope by AstroVisions</p>
+        </footer>
     </div>
+
+    <!-- Optional animations -->
+    <div class="animation-overlay"></div>
 </body>
 </html>

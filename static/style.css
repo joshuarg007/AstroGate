@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0;
     color: #333;
     display: flex;
     justify-content: center;
@@ -12,89 +12,73 @@ body {
 
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.subheading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #777;
+}
+
+.horoscope-card {
+    background: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 80%;
-    padding: 10px;
+.sign-title {
+    font-size: 28px;
+    font-weight: 600;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-button {
-    padding: 10px 20px;
+.horoscope-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.back-to-home {
+    margin-top: 30px;
+}
+
+.home-button {
+    padding: 12px 25px;
     background-color: #007bff;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+.home-button:hover {
     background-color: #0056b3;
 }
 
-.error {
-    color: #ff3333;
-    margin-top: 10px;
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
 }
 
-.home-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-form {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0056b3;
-}
-
-.error {
-    color: #ff3333;
-    margin-top: 10px;
+.animation-overlay {
+    display: none; /* You can add optional animation or transition effects here */
 }
